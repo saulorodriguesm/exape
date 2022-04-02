@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/myapp.css" type="text/css" />
+
+    <title>EXAPE Teste Prático</title>
+  </head>
+
+  <body>
+    <div class="header" id="header">
+      <nav class="subheader-custom container-custom" id="navbar">
+        <div>EXAPE - Saulo</div>
+
+        <div class="navbar-custom" id="navsite">
+          <a class="nav-link-custom" href="#about"> sobre</a>
+
+          <a class="nav-link-custom" href="#form"> contato</a>
+
+          <a class="nav-link-custom nav-link-zodiac" href="#form-zodiac"> quero descobrir o meu elemento</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="about container-custom section-margin" id="about">
+      <div class="row about-container">
+        <div class="col-md-4 about-image ">
+          <img src="img/me.jpg" />
+        </div>
+
+        <div class="col-md-8 about-text-container">
+          <h3 class="section-title">sobre mim</h3>
+          Iniciei minha jornada acadêmica no segundo semestre do ano de 2019 no
+          Instituto Federal de Sâo Paulo, meses depois consegui o meu primeiro
+          estágio como desenvolvedor front-end na empresa ACCT onde permaneci
+          por dois anos indo de estágiario à desenvolvedor pleno. Sai da empresa
+          no final de 2021, ingressando no time de seguros do Itaú Unibanco,
+          onde atuo até hoje no projeto de evolução da Loja de Seguros
+          implementada em ReactJS.
+        </div>
+      </div>
+    </div>
+
+    <div class="form container-custom section-margin" id="form">
+      <h3 class="section-title">formulário de contato</h3>
+
+      <form>
+        <div class="form-group">
+          <label for="name"><strong> nome completo</strong></label>
+          <input
+            type="name"
+            class="form-control"
+            style="border-radius: 20px"
+            id="inputNome"
+            placeholder="seu nome"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="date"><strong>data de nascimento</strong></label>
+          <input
+            type="date"
+            class="form-control"
+            style="border-radius: 20px"
+            id="date"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="endereco"
+            ><strong>endereço completo</strong></label
+          >
+          <textarea
+            class="form-control"
+            style="border-radius: 20px"
+            id="endereco"
+            placeholder="seu endereço completo"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="tel"
+            ><strong>telefone</strong></label
+          >
+          <input
+            class="form-control"
+            type="tel"
+            style="border-radius: 20px"
+            id="tel"
+            placeholder="(xx) xxxxx-xxxx"
+          ></input>
+        </div>
+        <div class="form-group select-custom">
+          <label for="interesses"
+            ><strong>interesses</strong></label
+          >
+          <select 
+          style="border-radius: 20px"  class="form-control" id="interesses" name="interesses">
+            <option value="edu">educação</option>
+            <option value="esp">esportes</option>
+            <option value="cur">curiosidades</option>
+            <option value="arl">ar livre</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" style="border-radius: 20px" class="btn-submit">
+            ENVIAR
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div class="form-zodiac container-custom section-margin" id="form-zodiac">
+      <span class="form-zodiac-title">element zdiac</span>
+      <form>
+        <div class="form-group">
+          <label for="name"><strong> nome completo</strong></label>
+          <input
+            type="name"
+            class="form-control"
+            style="border-radius: 20px"
+            id="zodiac-name"
+            placeholder="seu nome"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="day"><strong>que dia você nasceu?</strong></label>
+          <input
+            type="number"
+            class="form-control zodiac-input"
+            style="border-radius: 20px"
+            id="zodiac-day"
+          />
+        </div>
+        <div class="form-group">
+          <label for="month"><strong>em qual mês você nasceu?</strong></label>
+          <input
+            type="number"
+            class="form-control zodiac-input"
+            style="border-radius: 20px"
+            id="zodiac-month"
+          />
+        </div>
+        <div class="form-group">
+          <label for="year"><strong>e o ano?</strong></label>
+          <input
+            type="number"
+            class="form-control zodiac-input"
+            style="border-radius: 20px"
+            id="zodiac-year"
+          />
+        </div>
+
+        <div class="form-group d-flex justify-content-center">
+          <button id="zodiac-submit" style="border-radius: 20px" class="btn-submit">
+            descubra
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="alert alert-success custom-alert d-none" id="c-alert" role="alert">
+
+      <div><h4 class="alert-heading custom-heading">Ei, <div id="post-name"> </div></h4></div>
+      <div class="custom-content"> <p>Com base nas informações, você nasceu no dia<div id="post-day"></div> do mês <div id="post-month"></div> do ano <div id="post-year"></div>.</p> </div>
+      <hr>
+      <div class="custom-subcontent"><p class="mb-0">Com isso descobrimos que seu signo é o <div id="post-sign"></div> e o seu elemento é o: <div id="post-element"></div></p></div>
+    </div>
+    <div class="footer">Developed by Saulo Martins</div>
+
+  
+ 
+    <script src="js/myapp.js"></script>
+  </body>
+</html>
